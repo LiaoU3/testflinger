@@ -480,7 +480,7 @@ class MuxPi:
                 self._copy_to_control(
                     data_path / "ce-oem-iot/user-data", remote_tmp
                 )
-                cmd = f"sudo cp {remote_tmp}/user-data {base}/system-boot/"
+                cmd = f"sudo cp {remote_tmp}/user-data /var/lib/cloud/seed/nocloud/"
                 self._run_control(cmd)
                 self._configure_sudo()
             if image_type == "tegra":
