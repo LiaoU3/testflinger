@@ -477,7 +477,7 @@ class MuxPi:
             data_path = Path(__file__).parent / "../../data/muxpi"
             if image_type == "ce-oem-iot":
                 self._run_control("mkdir -p {}".format(remote_tmp))
-                self._run_control("mkdir -p /var/lib/cloud/seed/nocloud/")
+                self._run_control("sudo mkdir -p /var/lib/cloud/seed/nocloud/")
                 self._copy_to_control(
                     data_path / "ce-oem-iot/user-data", remote_tmp
                 )
